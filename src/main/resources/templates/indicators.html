@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru"xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Экономические показатели</title>
+</head>
+<body>
+<header>
+
+</header>
+<div class="container">
+  <p>Количество экономических показателей:</p>
+  <div  th:text="${indicators}">
+  </div>
+
+  <div th:switch="${inds}">
+    <h2 class="heading1" th:case="null">Нет показателей!</h2>
+    <div th:case="*">
+
+      <table>
+        <thead>
+        <tr>
+          <th class="heading1">id</th>
+          <th class="heading1">Год</th>
+          <th class="heading1">Выпуск товарной продукции</th>
+          <th class="heading1">Реализация товарной продукции</th>
+          <th class="heading1">Затраты на выпуск продукции</th>
+          <th class="heading1">Валовая прибыль</th>
+          <th class="heading1">Рентабельность от реализации</th>
+          <th class="heading1">Численность персонала</th>
+          <th class="heading1">Среднемесячная зарплата</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="inds : ${inds}">
+          <td class="heading1" th:text="${inds.id}"></td>
+          <td class="heading1" th:text="${inds.year}"></td>
+          <td class="heading1" th:text="${inds.output}"></td>
+          <td class="heading1" th:text="${inds.sales_of_products}"></td>
+          <td class="heading1" th:text="${inds.release_costs}"></td>
+          <td class="heading1" th:text="${inds.gross_profit}"></td>
+          <td class="heading1" th:text="${inds.return_on_sales}"></td>
+          <td class="heading1" th:text="${inds.stuff}"></td>
+          <td class="heading1" th:text="${inds.average_salary}"></td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<div th:switch="${product}">
+  <h2 class="heading1" th:case="null">Нет продуктов!</h2>
+
+  <div th:case="*">
+
+    <table>
+      <thead>
+      <tr>
+        <th class="heading1">Key</th>
+        <th class="heading1">IdBase</th>
+        <th class="heading1">Deleted</th>
+        <th class="heading1">Held</th>
+        <th class="heading1">DateStart</th>
+        <th class="heading1">NumberOfDocument</th>
+        <th class="heading1">price</th>
+        <th class="heading1">name</th>
+        <th class="heading1">description</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="product : ${product}">
+<!--        <td class="heading1" th:text="${product.UIDDocument}"></td>-->
+<!--        <td class="heading1" th:text="${product.Line}"></td>-->
+<!--        <td class="heading1" th:text="${product.toString()}"></td>-->
+        <td class="heading1" th:text="${product.id_base}"></td>
+        <td class="heading1" th:text="${product.Deleted}"></td>
+        <td class="heading1" th:text="${product.Held}"></td>
+        <td class="heading1" th:text="${product.document_start_date}"></td>
+        <td class="heading1" th:text="${product.number_of_document}"></td>
+        <td class="heading1" th:text="${product.price}"></td>
+        <td class="heading1" th:text="${product.name}"></td>
+        <td class="heading1" th:text="${product.description}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<!--<form action="#" th:action="@{/indicatorsFindByYear}" th:object="${inds}" method="get">-->
+<!--  <select class="form-control" id="inds" name="inds">-->
+<!--    <option value="">Выберите год</option>-->
+<!--    <option th:each="inds : ${inds}"-->
+<!--            th:value="${inds.year}"-->
+<!--            th:text="${inds.year}">-->
+<!--    </option>-->
+<!--  </select>-->
+<!--  </br></br>-->
+<!--  <input  type="submit" value="Найти показатели">-->
+<!--</form>-->
+<footer>
+
+</footer>
+</body>
+</html>
