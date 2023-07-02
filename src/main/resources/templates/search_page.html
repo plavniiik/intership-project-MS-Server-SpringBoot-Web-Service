@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru"xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link th:href="@{/styles/sty.css}" rel="stylesheet" />
+  <title>Показатели</title>
+</head>
+<body>
+<header>
+  <div class="b-main_slider__menu" id="small_menu">
+
+    <ul>
+      <li><a th:href="@{/indMain}">Список продуктов</a>
+      </li>
+      <li><a th:href="@{/searchIndicator}">Поиск</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+
+    <form action="#" th:action="@{/searchIndicatorAnswer}" th:object="${product}" method="get">
+      <div style="flex-direction: column" >
+        <div  class="b-index_search" >
+          <span class="sss1" style="margin-left: 40px">Код организации</span>
+
+          <input type="number" class="text heading1" th:name="id_org" id="id_org"value="0" required placeholder="Код организации" >
+         <br>
+          <span class="sss1" style="margin-left: 40px">Код склада</span>
+          <input type="number" class="text heading1" th:name="id_stock" id="id_stock"value="0" required placeholder="Код склада" style="margin-left: 80px;" >
+
+        </div>
+      </div>
+      </br>
+      <div  class="b-index_search" >
+        <button class="submit" onclick type="submit"  >
+          <span>Найти</span>
+        </button>
+      </div>
+
+
+    </form>
+
+
+</div>
+<footer>
+</footer>
+</body>
+</html>

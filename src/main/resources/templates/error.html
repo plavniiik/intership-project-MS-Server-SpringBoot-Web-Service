@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru"xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link th:href="@{/styles/sty.css}" rel="stylesheet" />
+  <title>Показатели</title>
+</head>
+<body>
+<header>
+  <div class="b-main_slider__menu" id="small_menu">
+
+    <ul>
+      <li><a th:href="@{/indMain}">Список продуктов</a>
+      </li>
+      <li><a th:href="@{/searchIndicator}">Поиск</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+
+  <h2 class="heading4">Неверные данные!</h2>
+  <!--  <p>Количество экономических показателей:</p>-->
+  <!--  <div  th:text="${indicators}">-->
+  <!--  </div>-->
+
+  <!--  <div th:switch="${inds}">-->
+  <!--    <h2 class="heading1" th:case="null">Нет показателей!</h2>-->
+  <!--    <div th:case="*">-->
+
+  <!--      <table>-->
+  <!--        <thead>-->
+  <!--        <tr>-->
+  <!--          <th class="heading1">id</th>-->
+  <!--          <th class="heading1">Год</th>-->
+  <!--          <th class="heading1">Выпуск товарной продукции</th>-->
+  <!--          <th class="heading1">Реализация товарной продукции</th>-->
+  <!--          <th class="heading1">Затраты на выпуск продукции</th>-->
+  <!--          <th class="heading1">Валовая прибыль</th>-->
+  <!--          <th class="heading1">Рентабельность от реализации</th>-->
+  <!--          <th class="heading1">Численность персонала</th>-->
+  <!--          <th class="heading1">Среднемесячная зарплата</th>-->
+  <!--        </tr>-->
+  <!--        </thead>-->
+  <!--        <tbody>-->
+  <!--        <tr th:each="inds : ${inds}">-->
+  <!--          <td class="heading1" th:text="${inds.id}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.year}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.output}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.sales_of_products}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.release_costs}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.gross_profit}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.return_on_sales}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.stuff}"></td>-->
+  <!--          <td class="heading1" th:text="${inds.average_salary}"></td>-->
+
+  <!--        </tr>-->
+  <!--        </tbody>-->
+  <!--      </table>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+</div>
+<!--<form action="#" th:action="@{/indicatorsFindByYear}" th:object="${inds}" method="get">-->
+<!--  <select class="form-control" id="inds" name="inds">-->
+<!--    <option value="">Выберите год</option>-->
+<!--    <option th:each="inds : ${inds}"-->
+<!--            th:value="${inds.year}"-->
+<!--            th:text="${inds.year}">-->
+<!--    </option>-->
+<!--  </select>-->
+<!--  </br></br>-->
+<!--  <input  type="submit" value="Найти показатели">-->
+<!--</form>-->
+<footer>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru"xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link th:href="@{/styles/sty.css}" rel="stylesheet" />
+  <title>Показатели</title>
+</head>
+<body>
+<header>
+  <div class="b-main_slider__menu" id="small_menu">
+
+    <ul>
+      <li><a th:href="@{/indMain}">Список продуктов</a>
+      </li>
+      <li><a th:href="@{/searchIndicator}">Поиск</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+  <div th:switch="${flag}">
+    <h2 class="heading4" th:case="1">Неверные данные!</h2>
+
+    <div th:case="*">
+      <div th:switch="${product}">
+        <h2 class="heading4" th:case="null">Нет продуктов!</h2>
+
+        <div th:case="*">
+
+
+          <table>
+            <thead>
+            <tr>
+              <th class="heading4">Key</th>
+              <th class="heading4">Код организации</th>
+              <th class="heading4">Код склада</th>
+              <th class="heading4">Номер базы</th>
+              <th class="heading4">На удаление</th>
+              <th class="heading4">Проведено</th>
+              <th class="heading4">Дата документа</th>
+              <th class="heading4">Номер документа</th>
+              <th class="heading4">Цена</th>
+              <th class="heading4">Наименование</th>
+              <th class="heading4">Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${product}">
+              <!--        <td class="heading1" th:text="${product.UIDDocument}"></td>-->
+              <!--        <td class="heading1" th:text="${product.Line}"></td>-->
+              <td class="heading4" th:text="${product.productKey.toString()}"></td>
+              <td class="heading4" th:text="${product.id_org}"></td>
+              <td class="heading4" th:text="${product.id_stock}"></td>
+              <td class="heading4" th:text="${product.id_base}"></td>
+              <td class="heading4" th:text="${product.Deleted}"></td>
+              <td class="heading4" th:text="${product.Held}"></td>
+              <td class="heading4" th:text="${product.document_start_date}"></td>
+              <td class="heading4" th:text="${product.number_of_document}"></td>
+              <td class="heading4" th:text="${product.price}"></td>
+              <td class="heading4" th:text="${product.name}"></td>
+              <td class="heading4" th:text="${product.description}"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  </div>
+</div>
+<footer>
+</footer>
+</body>
+</html>
